@@ -1,0 +1,52 @@
+<div class="card flex justify-content-center"></div>
+<section class="text-gray-600 body-font overflow-hidden">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="lg:w-4/5 mx-auto flex flex-wrap">
+      <img
+        alt="ecommerce"
+        class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
+        src="{{ productData.image }}"
+      />
+      <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+        <h2 class="text-sm title-font text-gray-500 tracking-widest">
+          {{ productData.brand }}
+        </h2>
+        <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">
+          {{ productData.name }}
+        </h1>
+        <p-rating [(ngModel)]="productData.rating" [cancel]="false"></p-rating>
+
+        <p class="leading-relaxed mb-10">
+          {{ productData.description }}
+          <br />
+          {{ productData.richDescription }}
+        </p>
+        <div>
+          <mat-label class="me-2">Quantity</mat-label>
+          <input matInput type="number" [(ngModel)]="quantity" />
+        </div>
+        <div
+          class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5"
+        ></div>
+
+        <div class="flex">
+          <span class="title-font font-medium text-2xl text-gray-900"
+            >${{ productData.price }}</span
+          >
+          <button
+            class="me-2 flex ml-auto text-white bg-gray-800 border-0 py-2 px-6 hover:bg-indigo-600 rounded"
+          >
+            Buy Now
+          </button>
+          <button
+            (click)="addProductToCart()"
+            type="button"
+            class="text-white bg-gray-800 border-0 py-2 px-6 hover:bg-indigo-600"
+          >
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

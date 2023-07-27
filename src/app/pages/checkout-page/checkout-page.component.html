@@ -1,0 +1,154 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap">
+    <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+      <h1 class="font-bold text-3xl pb-10">Checkout Page</h1>
+      <!-- form -->
+      <form [formGroup]="orderForm">
+        <div class="grid md:grid-cols-3 md:gap-5">
+          <div class="relative z-0 w-full mb-2 group">
+            <label
+              for="name"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Name</label
+            >
+            <input
+              formControlName="name"
+              type="text"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="relative z-0 w-full group">
+            <label
+              for="email"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Email</label
+            >
+            <input
+              formControlName="email"
+              type="email"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="relative z-0 w-full group">
+            <label
+              for="phone"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Password</label
+            >
+            <input
+              formControlName="phone"
+              type="text"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="relative z-0 w-full group">
+            <label
+              for="street"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Street</label
+            >
+            <input
+              formControlName="street"
+              type="text"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="relative z-0 w-full group">
+            <label
+              for="apartment"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Apartment</label
+            >
+            <input
+              formControlName="apartment"
+              type="text"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="relative z-0 w-full group">
+            <label
+              for="zip"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Zip Code</label
+            >
+            <input
+              formControlName="zip"
+              type="text"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="relative z-0 w-full group">
+            <label
+              for="city"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >City</label
+            >
+            <input
+              formControlName="city"
+              type="text"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              required
+            />
+          </div>
+          <div class="relative z-0 w-full group">
+            <label
+              for="country"
+              class="block mb-2 text-sm font-medium text-gray-900"
+              >Country</label
+            >
+            <input
+              formControlName="country"
+              type="text"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              required
+            />
+          </div>
+        </div>
+      </form>
+      <!-- form upper -->
+    </div>
+    <div
+      class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0"
+    >
+      <div>
+        <p class="lg:text-4xl text-3xl font-black leading-9 text-gray-800">
+          Summary
+        </p>
+        <div class="flex items-center justify-between pt-16">
+          <p class="text-base leading-none text-gray-800">Subtotal</p>
+          <p class="text-base leading-none text-gray-800">
+            {{ totalPrice | currency }}
+          </p>
+        </div>
+        <div class="flex items-center justify-between pt-5">
+          <p class="text-base leading-none text-gray-800">Shipping</p>
+          <p class="text-base leading-none text-indigo-600">Free</p>
+        </div>
+        <div class="flex items-center justify-between pt-5">
+          <p class="text-base leading-none text-gray-800">Tax</p>
+          <p class="text-base leading-none text-gray-800">$0</p>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center pb-6 justify-between lg:pt-5 pt-20">
+          <p class="text-2xl leading-normal text-gray-800">Total</p>
+          <p class="text-2xl font-bold leading-normal text-right text-gray-800">
+            {{ totalPrice | currency }}
+          </p>
+        </div>
+        <button
+          (click)="createOrder()"
+          class="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border text-white"
+        >
+          Place Order
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

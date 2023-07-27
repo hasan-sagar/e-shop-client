@@ -1,0 +1,22 @@
+<section class="text-gray-600 body-font">
+  <h1 class="text-center text-2xl font-semibold py-5">Browse By Category</h1>
+  <div class="container px-5 py-8 mx-auto">
+    <div class="flex flex-wrap -m-4 text-center cursor-pointer">
+      <div
+        class="p-4 md:w-1/6 sm:w-1/2 w-full"
+        *ngFor="let category of categories"
+      >
+        <div
+          class="transition duration-200 hover:bg-indigo-500 px-3 py-2 bg-gray-800"
+        >
+          <h2
+            (click)="getCategoryId(category.id)"
+            class="title-font font-medium text-sm text-white hover:text-gray-900"
+          >
+            {{ category.name }}
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

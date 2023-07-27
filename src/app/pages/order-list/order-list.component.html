@@ -1,0 +1,28 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500">
+    <caption class="p-5 text-lg font-medium text-gray-900 bg-white text-center">
+      Order Lists
+    </caption>
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-3">Order ID</th>
+        <th scope="col" class="px-6 py-3">Total Price</th>
+        <th scope="col" class="px-6 py-3">Order Date</th>
+        <th scope="col" class="px-6 py-3">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-white border-b" *ngFor="let order of orders">
+        <th
+          scope="row"
+          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+        >
+          {{ order.id }}
+        </th>
+        <td class="px-6 py-4">{{ order.totalPrice|currency }}</td>
+        <td class="px-6 py-4">{{ order.dateOrdered }}</td>
+        <td class="px-6 py-4">{{ order.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
